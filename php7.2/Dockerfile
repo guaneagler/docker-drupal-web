@@ -7,6 +7,6 @@ ENV MEMCACHED_VERSION 3.0.4
 # Install PHP xdebug extension
 RUN pecl install xdebug-2.6.0 && docker-php-ext-enable xdebug 
 
-RUN apt install rsync
+RUN apt update && apt upgrade && apt install rsync
 
 COPY config/* /usr/local/etc/php/conf.d/
